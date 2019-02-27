@@ -1,0 +1,27 @@
+{{define "year"}}
+  <h1>Year: {{.AcaYear}}</h1>
+  {{if .Fall.Term}}
+    <div>
+      <h2>Term: {{.Fall.Term}}</h2>
+      {{range .Fall.Courses}}
+        {{template "course" .}}
+      {{end}}
+    </div>
+  {{end}}
+  {{if .Spring.Term}}
+    <div>
+      <h2>Term: {{.Spring.Term}}</h2>
+      {{range .Spring.Courses}}
+        {{template "course" .}}
+      {{end}}
+    </div>
+  {{end}}
+  {{if .Summer.Term}}
+    <div>
+      <h2>Term: {{.Summer.Term}}</h2>
+      {{range .Summer.Courses}}
+        {{template "course" .}}
+      {{end}}
+    </div>
+  {{end}}
+{{end}}
